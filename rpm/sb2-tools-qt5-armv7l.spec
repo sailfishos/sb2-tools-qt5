@@ -6,6 +6,13 @@ Name:          sb2-tools-qt5-armv7l
 Version:       1.0
 Release:       1
 Source0:       %{name}-%{version}.tar.bz2
+Source1:       baselibs.conf
+Source2:       precheckin.sh
+Source3:       sb2-tools-qt5-armv7hl-rpmlintrc
+Source4:       sb2-tools-qt5-armv7l-rpmlintrc
+Source5:       sb2-tools-qt5-mipsel-rpmlintrc
+Source6:       sb2-tools-qt5-template-rpmlintrc
+
 AutoReqProv:   0
 BuildRequires: rpm grep tar patchelf sed fakeroot
 BuildRequires: %packages_in_tools
