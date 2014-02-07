@@ -1,7 +1,7 @@
 %define __strip /bin/true
 %define architecture_target @ARCH@
 %define _build_name_fmt    %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.dontuse.rpm
-%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore libicu systemd
+%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml libicu systemd-libs libgcrypt libgpg-error
 Name:          sb2-tools-qt5-@ARCH@
 Version:       1.0
 Release:       1
@@ -13,12 +13,12 @@ Source4:       sb2-tools-qt5-armv7l-rpmlintrc
 Source5:       sb2-tools-qt5-mipsel-rpmlintrc
 Source6:       sb2-tools-qt5-template-rpmlintrc
 
+# no auto requirements - they're generated
 AutoReqProv:   0
 BuildRequires: rpm grep tar patchelf sed fakeroot
 BuildRequires: %packages_in_tools
 ExclusiveArch: nothing
 
-# no auto requirements - they're generated
 License:       BSD
 Group:         Development/Tools
 Summary:       SB2 cross tools for qt5
@@ -105,5 +105,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f filestoinclude2
 %defattr(-,root,root)
-
 
