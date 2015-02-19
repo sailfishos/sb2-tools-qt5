@@ -8,10 +8,7 @@ Release:       1
 Source0:       %{name}-%{version}.tar.bz2
 Source1:       baselibs.conf
 Source2:       precheckin.sh
-Source3:       sb2-tools-qt5-armv7hl-rpmlintrc
-Source4:       sb2-tools-qt5-armv7l-rpmlintrc
-Source5:       sb2-tools-qt5-mipsel-rpmlintrc
-Source6:       sb2-tools-qt5-template-rpmlintrc
+Source100:       sb2-tools-qt5-@ARCH@-rpmlintrc
 
 # no auto requirements - they're generated
 AutoReqProv:   0
