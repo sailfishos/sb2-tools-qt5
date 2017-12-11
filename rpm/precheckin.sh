@@ -1,5 +1,5 @@
 #!/bin/sh
-ARCHS="armv7l armv7hl mipsel"
+ARCHS="aarch64 armv7l armv7hl mipsel"
 
 echo -n "arch i486 targets " > baselibs.conf
 for x in $ARCHS; do
