@@ -1,7 +1,7 @@
 %define __strip /bin/true
 %define architecture_target mipsel
 %define _build_name_fmt    %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.dontuse.rpm
-%define packages_in_tools  qt5-tools qt5-qtcore qt5-qtxml systemd-libs libgcrypt libgpg-error
+%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-libs libgcrypt libgpg-error
 Name:          sb2-tools-qt5-mipsel
 Version:       1.0
 Release:       1
