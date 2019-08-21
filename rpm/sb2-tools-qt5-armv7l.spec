@@ -1,7 +1,10 @@
 %define __strip /bin/true
 %define architecture_target armv7l
 %define _build_name_fmt    %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.dontuse.rpm
-%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-libs libgcrypt libgpg-error
+# qt5-qtcore: needed by uic from qt5-tools
+# systemd-libs libgcrypt libgpg-error: needed by qt5-qtcore
+# libselinux: needed by systemd-libs
+%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-libs libgcrypt libgpg-error libselinux
 Name:          sb2-tools-qt5-armv7l
 Version:       1.0
 Release:       1
