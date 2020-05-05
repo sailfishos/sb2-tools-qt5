@@ -5,7 +5,8 @@
 # systemd-libs libgcrypt libgpg-error: needed by qt5-qtcore
 # libselinux: needed by systemd-libs
 # systemd: needed by uic from qt5-tools
-%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
+# cryptsetup-libs: needed by uic from qt5-tools
+%define packages_in_tools cryptsetup-libs qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
 Name:          sb2-tools-qt5-mipsel
 Version:       1.0
 Release:       1
@@ -49,6 +50,7 @@ mkdir -p %buildroot
 rpm -ql %packages_in_tools > filestoinclude1
 cat > filestoignore << EOF
 /etc/crypttab
+/run/cryptsetup
 /usr/share/man
 /usr/share/doc
 /var/lib/systemd/random-seed
