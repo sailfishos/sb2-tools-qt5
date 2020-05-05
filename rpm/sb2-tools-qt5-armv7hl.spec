@@ -4,7 +4,8 @@
 # qt5-qtcore: needed by uic from qt5-tools
 # systemd-libs libgcrypt libgpg-error: needed by qt5-qtcore
 # libselinux: needed by systemd-libs
-%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-libs libgcrypt libgpg-error libselinux
+# systemd: needed by uic from qt5-tools
+%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
 Name:          sb2-tools-qt5-armv7hl
 Version:       1.0
 Release:       1
@@ -47,8 +48,10 @@ It is not intended to be used in a normal system!
 mkdir -p %buildroot
 rpm -ql %packages_in_tools > filestoinclude1
 cat > filestoignore << EOF
+/etc/crypttab
 /usr/share/man
 /usr/share/doc
+/var/lib/systemd/random-seed
 EOF
 grep -vf filestoignore filestoinclude1 | sort | uniq > filestoinclude2
 cat filestoinclude2
