@@ -6,7 +6,8 @@
 # libselinux: needed by systemd-libs
 # systemd: needed by uic from qt5-tools
 # cryptsetup-libs: needed by uic from qt5-tools
-%define packages_in_tools cryptsetup-libs qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
+# device-mapper-libs: needed by cryptsetup-libs
+%define packages_in_tools cryptsetup-libs device-mapper-libs qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
 Name:          sb2-tools-qt5-armv7hl
 Version:       1.0
 Release:       1
