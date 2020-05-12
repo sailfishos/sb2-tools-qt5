@@ -7,7 +7,8 @@
 # systemd: needed by uic from qt5-tools
 # cryptsetup-libs: needed by uic from qt5-tools
 # device-mapper-libs: needed by cryptsetup-libs
-%define packages_in_tools cryptsetup-libs device-mapper-libs qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
+# json-c: needed by cryptsetup-libs
+%define packages_in_tools cryptsetup-libs device-mapper-libs json-c qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
 Name:          sb2-tools-qt5-aarch64
 Version:       1.0
 Release:       1
