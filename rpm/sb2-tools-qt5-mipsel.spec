@@ -3,12 +3,11 @@
 %define _build_name_fmt    %%{ARCH}/%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.dontuse.rpm
 # qt5-qtcore: needed by uic from qt5-tools
 # systemd-libs libgcrypt libgpg-error: needed by qt5-qtcore
-# libselinux: needed by systemd-libs
 # systemd: needed by uic from qt5-tools
 # cryptsetup-libs: needed by uic from qt5-tools
 # device-mapper-libs: needed by cryptsetup-libs
 # json-c: needed by cryptsetup-libs
-%define packages_in_tools cryptsetup-libs device-mapper-libs json-c qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error libselinux
+%define packages_in_tools cryptsetup-libs device-mapper-libs json-c qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd systemd-libs libgcrypt libgpg-error
 Name:          sb2-tools-qt5-mipsel
 Version:       1.0
 Release:       1
