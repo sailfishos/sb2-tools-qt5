@@ -4,7 +4,7 @@
 # qt5-qtcore: needed by uic from qt5-tools
 # systemd-libs libgcrypt libgpg-error: needed by qt5-qtcore
 # libselinux: needed by systemd-libs
-%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-mini-libs libgcrypt libgpg-error libselinux
+%define packages_in_tools  qt5-qmake qt5-tools qt5-qtcore qt5-qtxml systemd-mini-libs libgcrypt libgpg-error
 Name:          sb2-tools-qt5-armv7l
 Version:       1.0
 Release:       1
