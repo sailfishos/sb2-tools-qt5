@@ -11,7 +11,7 @@ Release:       1
 Source0:       %{name}-%{version}.tar.bz2
 Source1:       baselibs.conf
 Source2:       precheckin.sh
-Source100:       sb2-tools-qt5-@ARCH@-rpmlintrc
+Source100:     sb2-tools-qt5-@ARCH@-rpmlintrc
 
 # no auto requirements - they're generated
 AutoReqProv:   0
@@ -20,17 +20,15 @@ BuildRequires: %packages_in_tools
 ExclusiveArch: nothing
 
 License:       BSD
-Group:         Development/Tools
 Summary:       SB2 cross tools for qt5
 
 %description
-This is a package providing %packages_in_tools for SB2 tools directory 
+This is a package providing %packages_in_tools for SB2 tools directory
 It is not intended to be used in a normal system!
 
 
 %package dependency
 Summary: Dependency for sb2 host side
-Group: Development/Tools
 
 %description dependency
 This is a package providing %packages_in_tools SB2 tools directory
@@ -70,7 +68,7 @@ shellquote()
 echo "Creating baselibs_new.conf"
 echo ""
 rm -rRf /tmp/baselibs_new.conf || true
-shellquote "arch i486 targets @ARCH@:inject" >> /tmp/baselibs_new.conf
+shellquote "arch %{_target_cpu} targets @ARCH@:inject" >> /tmp/baselibs_new.conf
 shellquote "%{name}" >> /tmp/baselibs_new.conf
 shellquote "  targettype x86 block!" >> /tmp/baselibs_new.conf
 shellquote "  targettype 32bit block!" >> /tmp/baselibs_new.conf
@@ -81,7 +79,7 @@ shellquote "  targettype inject -%{_mandir}" >> /tmp/baselibs_new.conf
 shellquote "  targettype inject -%{_docdir}" >> /tmp/baselibs_new.conf
 shellquote "  targettype inject config    -/sb2-config$" >> /tmp/baselibs_new.conf
 
-shellquote "arch i486 targets @ARCH@:inject" >> /tmp/baselibs_new.conf
+shellquote "arch %{_target_cpu} targets @ARCH@:inject" >> /tmp/baselibs_new.conf
 shellquote "%{name}-dependency" >> /tmp/baselibs_new.conf
 shellquote "  targettype x86 block!" >> /tmp/baselibs_new.conf
 shellquote "  targettype 32bit block!" >> /tmp/baselibs_new.conf
@@ -96,13 +94,7 @@ cat /tmp/baselibs_new.conf > %{_sourcedir}/baselibs.conf
 mkdir -p %buildroot/etc
 touch %buildroot/etc/sb2-tools-qt5-template
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files dependency
-%defattr(-,root,root)
 /etc/sb2-tools-qt5-template
 
 %files -f filestoinclude2
-%defattr(-,root,root)
-
